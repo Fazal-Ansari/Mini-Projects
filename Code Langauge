@@ -1,0 +1,51 @@
+                              # Secret language 
+# Fazal Ansari
+import random
+import string
+def code():
+    message=input('Enter a message to code : ')
+    if len(message)< 4: 
+        print(message[::-1]) # reverses the string
+        
+    else:
+        l=list(message) # string to list conversion
+        #print(l)
+        ran1=''.join(random.choices(string.ascii_letters,k=3))
+        ran2=''.join(random.choices(string.ascii_letters,k=3))
+        l.append(ran1) # adding 3 random letters at start of the list
+        l.reverse()
+        l.append(ran2) # adding 3 random letters at end of the list
+        s=""
+        s=s.join(l) # converting list into string
+        print("Coded Message: ",s)
+
+def decode():
+    message=input("Enter a message to decode: ")
+    if len(message)<4:
+        print(message[::-1]) # reversing the string
+# Fazal Ansari        
+    else:
+        l2=list(message)     #  string to list conversion
+        for i in range(3):
+            l2.pop()         # removing first 3 letters
+                
+        l2=list(message[::-1]) # reversing the list
+        
+        for i in range(3):   # removing 3 letters
+            l2.pop()
+        
+        l2.reverse()
+        for i in range(3): 
+            l2.pop()
+
+# Fazal Ansari            
+        s=''
+        s=s.join(l2)
+        print("Decoded Message: ",s[::-1])
+while(1):
+    choice=int(input("\n What do you want to do \nPress 1 to Send asecret message \nPress 2 Decode message \n"))
+    if choice==1: 
+        code()
+    else: 
+        decode()
+    print('==================================')
