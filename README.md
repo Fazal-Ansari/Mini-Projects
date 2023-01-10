@@ -11,5 +11,5 @@ Logic of the program:
  - take string reverse it 
  - if string is less than 4 , simply reverse it and print
  -else , remove 3 letters from start and end of the string and print it
- =============================================================================
+ ==============================================================================
  ( Fazal Ansari )
